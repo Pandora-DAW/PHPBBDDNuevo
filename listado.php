@@ -12,6 +12,7 @@
                 <th>Apellido2</th>
                 <th>Fecha de Nacimiento</th>
                 <th>Correo Electrónico</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@
                 echo "<td> ".$fila['apellido2']." </td>\n";
                 echo "<td> ".$fila['fecha_nac']. " </td>\n";
                 echo "<td> ".$fila['email']. " </td>\n";
+                echo "<td><a href='borrado.php?id=".$fila['id']."'>Eliminar</a></td>\n";
                 echo "</tr>\n";
                 
             }
@@ -38,6 +40,14 @@
         ?>     
         </tbody>
     </table>
+    <div class="mensaje">
+        <?php 
+            if (isset($_SESSION['mensaje'])) {
+                echo $_SESSION['mensaje'];
+                unset($_SESSION['mensaje']);
+            }
+            ?>
+    </div>
 
 </article>
 
