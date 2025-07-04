@@ -2,10 +2,10 @@
 
 if (!isset($_POST['nombre'])) {
     // Mueve el navegador hasta otra página si no se llegadesde el formulario
-    header('registro.php');
+    header('Location:registro.php');
 }
+require_once('plantillas/cabecera.php');
 
-    require_once('plantillas/cabecera.php');
     $nombre = $_POST['nombre'];
     $apellido1 = $_POST['apellido1'];
     $apellido2 = $_POST['apellido2'];
@@ -27,6 +27,9 @@ if (!isset($_POST['nombre'])) {
     <?php 
         $consulta = 
             "insert into alumnos (nombre,apellido1,apellido2,fecha_nac, email) values('$nombre','$apellido1', '$apellido2', '$fechaNac', '$email') ";
+
+            /* $consulta = 
+            'insert into alumnos (nombre,apellido1,apellido2,fecha_nac, email) values("'.$nombre.'","'.$apellido1.'", '$apellido2', '$fechaNac', '$email') ';*/
 
            // echo $consulta;
 

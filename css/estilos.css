@@ -1,0 +1,37 @@
+table, td, th {
+    border: 2px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: aquamarine; /* cambia el fondo de la filas pares */
+}
+
+nav > ul {
+    display: flex; /* maqueta los elemento uno a la derecha del otro*/
+    list-style-type: none; /* quita los puntos de la lista ul */
+    gap: 20px;  /* espacio entre los elementos del contenedor padre (ul) */ 
+}
+
+nav >ul > li {
+    padding: 20px 10px;
+    background-color: black;
+    color:white;
+}
+nav > ul > li > a {
+    text-decoration: none; /* quitamos el subrayado */
+    color: white;
+    display: block;
+}
+
+nav > ul > li:hover {
+    background-color: brown; /* cambiamos el fondo de los li cuando nos ponemos con el cursor encima */
+}
