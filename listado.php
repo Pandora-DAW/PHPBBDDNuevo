@@ -12,6 +12,7 @@
                 <th>Apellido2</th>
                 <th>Fecha de Nacimiento</th>
                 <th>Correo Electrónico</th>
+                <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
         </thead>
@@ -24,7 +25,7 @@
             $filas = mysqli_query($conexion, $consulta);
 
             // iterar las filas de la tabla
-            while($fila = mysqli_fetch_array($filas)){
+            while(($fila = mysqli_fetch_array($filas))==true){
                 echo "<tr>\n";
                 echo "<td> ".$fila['id']." </td>\n";
                 echo "<td> ".$fila['nombre']." </td>\n";
@@ -32,6 +33,7 @@
                 echo "<td> ".$fila['apellido2']." </td>\n";
                 echo "<td> ".$fila['fecha_nac']. " </td>\n";
                 echo "<td> ".$fila['email']. " </td>\n";
+                echo "<td><a href='editar.php?id=".$fila['id']."'>Editar</a></td>\n";
                 echo "<td><a href='borrado.php?id=".$fila['id']."'>Eliminar</a></td>\n";
                 echo "</tr>\n";
                 

@@ -16,10 +16,11 @@ $id = $_GET['id'];
 $consulta="DELETE FROM alumnos WHERE id=$id";
 
 $resultado = mysqli_query($conexion, $consulta);
-if ($resultado>0) {
-    $_SESSION["mensaje"]="Alumno borrado correctamente".$resultado.$consulta;
+$numFilas=mysqli_affected_rows($conexion);
+if ($numFilas==1) {
+    $_SESSION["mensaje"]="Alumno borrado correctamente. Se ha borrado $numFilas filas";
 } else {
-    $_SESSION["mensaje"]= "Error. No se ha podido borrar.".$resultado;
+    $_SESSION["mensaje"]= "Error. No se ha podido borrar.";
 }
 
 header("Location:listado.php");
